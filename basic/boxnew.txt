@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+class boxnew{
+int l,h,b;
+box_new(int Length,int Breath,int Height);
+{
+    l=Length;
+    h=Height;
+    b=Breath;
+}
+void Volume{
+    System.out.println(" Volume " + l*b*h);
+
+}
+public static void main(String args[])
+{
+box_new obj = new box_new();
+System.out.println("Enter Length , Breath and Height");
+Scanner s=new Scanner(System.in);
+obj.l=s.nextInt();
+obj.b=s.nextInt();
+obj.h=s.nextInt();
+System.out.println(" Volume " + (obj.l*obj.b*obj.h));
+}
+}
