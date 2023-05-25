@@ -1,23 +1,32 @@
 import java.util.*;
 
-class solution{
-        public static void main(String []args){
-        Scanner in = new Scanner(System.in);
-        double a=0;
-        int b=0,c=0;
-        int t=in.nextInt();
-        for(int i=0;i<t;i++){
-             a = in.nextInt();
-             b = in.nextInt();
-             c = in.nextInt();
+class solution {
+    public static int removeDuplicates(int[] nums, int n) {
+        int[] temp = new int[n];
+        int j = 0;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] != nums[i + 1]) {
+                temp[j++] = nums[i];
+            }
         }
-        for(int j = 0 ; j <c ;j++){
-            double d=Math.pow(2,j);
-            a= a + d * b;
-                System.out.print(a+" "+d);
-    
+        temp[j++] = nums[n - 1];
+        for (int i = 0; i < j; i++) {
+            nums[i] = temp[i];
         }
-        System.out.println();
-        in.close();
+        return j;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] nums = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+        int length = removeDuplicates(nums, n);
+        System.out.print(length+" ");
+        for (int i = 0; i < length; i++) {
+            System.out.print(nums[i] + " ");
+        }
     }
 }
